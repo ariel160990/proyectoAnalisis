@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarCaso.aspx" />
+    <Content Include="AsignarCaso.aspx" />
+    <Content Include="EnviarSolicitud.aspx" />
     <Content Include="Maestra.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -69,6 +72,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarCaso.aspx.cs">
+      <DependentUpon>AgregarCaso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarCaso.aspx.designer.cs">
+      <DependentUpon>AgregarCaso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarCaso.aspx.cs">
+      <DependentUpon>AsignarCaso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarCaso.aspx.designer.cs">
+      <DependentUpon>AsignarCaso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnviarSolicitud.aspx.cs">
+      <DependentUpon>EnviarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnviarSolicitud.aspx.designer.cs">
+      <DependentUpon>EnviarSolicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Maestra.Master.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
     </Compile>
