@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Practica4Bases1 {
+namespace ProyectoAnalisis {
     
     
     public partial class Maestra {
