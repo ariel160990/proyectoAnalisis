@@ -1,19 +1,46 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestra.master.cs" Inherits="ProyectoAnalisis.Maestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestra.master.cs" Inherits="Practica4Bases1.Maestra" %>
 
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+
+
     </asp:ContentPlaceHolder>
-</head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="Principal.aspx">Principal</a></li>
+				<li><a href="Clientes.aspx">Clientes</a></li>
+				<li><a href="Casos.aspx">Casos</a></li>
+				<li><a href="Documentos.aspx">Documentos</a></li>
+                <li><a href="Facturas.aspx">Facturas</a></li>
+                <li><a href="TipoCasos.apsx">Tipo de Casos</a></li>
+                <li><a href="Bitacora.aspx">Bitacora de Transacciones</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="logo" class="Row">
+	<h1>&nbsp;&nbsp;&nbsp; Abogados Virtual </h1>
+    <p>
+         Camina de la mano de la Ley, y no tendrás Problemas!</p>
+    </div>
+    <hr />
+        &nbsp;<form id="form2" runat="server">
+    <div style="text-align: center">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
+
+
         </asp:ContentPlaceHolder>
     </div>
     </form>
