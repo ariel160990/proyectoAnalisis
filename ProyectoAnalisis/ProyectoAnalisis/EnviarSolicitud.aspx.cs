@@ -27,12 +27,36 @@ namespace ProyectoAnalisis
                 connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
                 connection.ConnectionString = connectionString;
                 connection.Open();
-                MessageBox.Show("Conexion Exitosa", ":)");
+                MySqlCommand instruccion = connection.CreateCommand();
+                instruccion.CommandText = "insert into solicitud(Tipo,Descripcion,No_Colegiado_Abogado,DPI,Estado_Solicitudl)  values('" + TextBox3.Text + "','" + TextBox2.Text + "','" + TextBox1.Text + "','" + Label6.Text + "','" + "pendiente" + "');";
+                instruccion.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
+                TextBox2.Text = "";
+                TextBox1.Text = "";
+                TextBox3.Text = "";
             }
             catch (Exception)
             {
-                MessageBox.Show("El servidor de base de datos esta caido!", "Servidor No Disponible");
+                MessageBox.Show("Su solicitud no pudo ser procesada, prueba mas tarde!", "Error de solicitud");
 
+            }
+        }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text=="" && TextBox2.Text=="" && TextBox3.Text=="")
+            {
+                MessageBox.Show("Llene todos los campos para proceder!", "Error de solicitud");
+            }
+            else
+            {
+                conectarBase();
             }
         }
     }

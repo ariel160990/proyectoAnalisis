@@ -27,18 +27,32 @@ namespace ProyectoAnalisis
                 connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
                 connection.ConnectionString = connectionString;
                 connection.Open();
-                MessageBox.Show("Conexion Exitosa",":)");
+                MySqlCommand instruccion = connection.CreateCommand();
+                String fecha = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
+                instruccion.CommandText = "insert into caso(Descripcion,Fecha_Ingreso,Usuario_Usuario,Estado_Id_Estado,Tipo_Caso_Id_Tipo)  values('" + TextBox2.Text + "','" + fecha + "','" + Label4.Text + "'," + 1 + "," + 1 + ");";
+                instruccion.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Documento Registrado Correctamente!", "Registro Completado");
+                TextBox2.Text = "";
             }
             catch (Exception)
             {
-                MessageBox.Show("El servidor de base de datos esta caido!", "Servidor No Disponible");
+                MessageBox.Show("Un dato esta erroneo", "Inserción incorrecta");
 
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            conectarBase();
+            if (TextBox2.Text=="")
+            {
+                MessageBox.Show("Llene todos los campos para continuar!","Error de llenado");
+            }
+            else
+            {
+                conectarBase();
+            }
+            
         }
     }
 }
