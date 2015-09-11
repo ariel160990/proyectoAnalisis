@@ -35,6 +35,8 @@ namespace ProyectoAnalisis
                 TextBox2.Text = "";
                 TextBox1.Text = "";
                 TextBox3.Text = "";
+                token();
+                valor = 0;
             }
             catch (Exception)
             {
@@ -42,7 +44,7 @@ namespace ProyectoAnalisis
 
             }
         }
-
+        int valor = 0;
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -59,5 +61,34 @@ namespace ProyectoAnalisis
                 conectarBase();
             }
         }
+
+        private void token()
+        {
+            try
+            {
+
+                connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                MySqlCommand instruccion = connection.CreateCommand();
+                instruccion.CommandText = "select  * from solicitud;";
+                MySqlDataReader Reader = instruccion.ExecuteReader();
+                //MessageBox.Show("Anote el codigo proporcionado, con este podrá dar seguimiento a su solicitud: "+(Reader.FieldCount+1));
+                while (Reader.Read())
+                {
+                    valor = valor+1;
+                }
+                MessageBox.Show("El token para seguimiento de su solicitud es: "+valor);
+                connection.Close();
+                //MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Su solicitud no pudo ser procesada, prueba mas tarde!", "Error de solicitud");
+            }
+            
+
+        }
     }
+    
 }

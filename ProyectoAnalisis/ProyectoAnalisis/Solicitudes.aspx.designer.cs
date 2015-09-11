@@ -40,6 +40,15 @@ namespace ProyectoAnalisis {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
+        /// Control Label7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
         /// Control DropDownList1.
         /// </summary>
         /// <remarks>

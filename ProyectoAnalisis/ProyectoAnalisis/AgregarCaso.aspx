@@ -25,10 +25,14 @@
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br />
     <br />
     <br />
     </div>
     <br />
+        <asp:Label ID="Label6" runat="server" Enabled="False" Font-Bold="True" Font-Names="Comic Sans MS" Font-Size="18pt" Text="Terminos de Contrato: Toda solicitud es problema de usted y del abogado, nosotros no nos hacemos responsables de posteriores problemas, agradecemos su comprensión y disfrute de la plataforma."></asp:Label>
     <br />
     <br />
     <br />

@@ -9,6 +9,9 @@
 &nbsp;
         <asp:Label ID="Label3" runat="server" Text="123456789" Visible="False"></asp:Label>
     </p>
+    <p>
+        <asp:Label ID="Label7" runat="server" Text="Nuevas Solicitudes"></asp:Label>
+    </p>
     <asp:DropDownList ID="DropDownList1" runat="server" CausesValidation="True">
     </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;
@@ -33,7 +36,7 @@
     <br />
     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Aceptar" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button3" runat="server" Text="Rechazar" />
+    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Rechazar" />
     <br />
     <br />
     <br />
