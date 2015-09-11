@@ -32,11 +32,14 @@ namespace ProyectoAnalisis
                     //Console.Write(Reader["Id_solicitud"].ToString());
                     //MessageBox.Show(Reader["Id_solicitud"].ToString());
                     String aam = Reader["Id_solicitud"].ToString() + Reader["Descripcion"].ToString();
-                    MessageBox.Show(aam);
+                    TextBox1.Text = Reader["Id_solicitud"].ToString();
+                    TextBox2.Text = Reader["Tipo"].ToString();
+                    TextBox3.Text = Reader["Descripcion"].ToString();
+                    //MessageBox.Show(aam);
 
                 }
                 connection.Close();
-                MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
+                //MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
             }
             catch (Exception)
             {
@@ -46,7 +49,15 @@ namespace ProyectoAnalisis
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            conectarBase();
+            if (DropDownList1.Items.Count>0)
+            {
+
+            }
+            else
+            {
+                conectarBase();
+            }
+            
         }
         private void conectarBase()
         {
@@ -57,7 +68,7 @@ namespace ProyectoAnalisis
                 connection.ConnectionString = connectionString;
                 connection.Open();
                 MySqlCommand instruccion = connection.CreateCommand();
-                instruccion.CommandText = "select  * from solicitud where No_Colegiado_Abogado ='"+Label3.Text+"';";
+                instruccion.CommandText = "select  * from solicitud where No_Colegiado_Abogado ='" + Label3.Text + "' and Estado_Solicitudl="+"'pendiente';";
                 MySqlDataReader Reader = instruccion.ExecuteReader();
                 while (Reader.Read())
                 {
@@ -70,7 +81,7 @@ namespace ProyectoAnalisis
 
                 }
                 connection.Close();
-                MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
+                //MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
             }
             catch (Exception)
             {
@@ -79,9 +90,19 @@ namespace ProyectoAnalisis
             }
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            caso();
+            
+                caso();
+            
+
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
