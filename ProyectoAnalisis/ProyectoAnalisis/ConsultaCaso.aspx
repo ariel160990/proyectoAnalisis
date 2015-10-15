@@ -15,12 +15,12 @@
     <asp:Label ID="Label2" runat="server" Text="Resultados de la busqueda"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label6" runat="server" Text="Label" text-align="left"></asp:Label>
+    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Label ID="Label7" runat="server" Text="Label" text-align="left"></asp:Label>
+    <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label8" runat="server" Text="Label" text-align="left"></asp:Label>
+    <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
     <asp:Label ID="Label5" runat="server" Text="Estado de la solicitud:"></asp:Label>
