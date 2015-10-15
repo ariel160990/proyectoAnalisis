@@ -68,24 +68,38 @@ namespace ProyectoAnalisis
                 connection.ConnectionString = connectionString;
                 connection.Open();
                 MySqlCommand instruccion = connection.CreateCommand();
-                instruccion.CommandText = "select  * from solicitud where No_Colegiado_Abogado ='" + Label3.Text + "' and Estado_Solicitudl="+"'pendiente';";
+                instruccion.CommandText = "select  * from solicitud where No_Colegiado_Abogado =" + Label3.Text + " and Estado_Solicitudl="+"'pendiente';";
                 MySqlDataReader Reader = instruccion.ExecuteReader();
-                if (!Reader.Read())
+                if (!Reader.HasRows)
                 {
                     Label7.Text = "No hay solicitudes nuevas!";
                 }
                 else
                 {
+                    //Reader.Read();
                     while (Reader.Read())
                     {
+                        DropDownList1.Items.Add(Reader["Id_solicitud"].ToString());
+                        Console.Write(Reader["Id_solicitud"]);
+                    }
+                    /*List<int> list = new List<int>();
+                    for (int i = 0; i < Reader.FieldCount; i++)
+                    {
+                        if (list.Contains(Convert.ToInt16(Reader["Id_solicitud"].ToString())))
+                        {
 
-
-                        //Console.Write(Reader["Id_solicitud"].ToString());
-                        //MessageBox.Show(Reader["Id_solicitud"].ToString());
-                        //String aam = Reader["Id_solicitud"].ToString() + " " + Reader["Descripcion"].ToString();
-                        this.DropDownList1.Items.Add(Reader["Id_solicitud"].ToString());
+                        }
+                        else
+                        {
+                            Console.Write(Reader["Id_solicitud"].ToString());
+                            list.Add(Convert.ToInt16(Reader["Id_solicitud"].ToString()));
+                        }
 
                     }
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        DropDownList1.Items.Add(list[i].ToString());
+                    }*/
                 }
                 connection.Close();
                 //MessageBox.Show("Solicitud Registrada Correctamente, espere confirmación!", "Registro Completado");
@@ -114,59 +128,80 @@ namespace ProyectoAnalisis
 
         private void aceptar()
         {
-            try
+            if (TextBox1.Text != "" && TextBox2.Text != "" && TextBox3.Text != "")
             {
+                try
+                {
 
-                connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
-                connection.ConnectionString = connectionString;
-                connection.Open();
-                //update 
-                MySqlCommand instruccion = connection.CreateCommand();
-                instruccion.CommandText = "update solicitud set Estado_Solicitudl='aceptada' where Id_solicitud='"+TextBox1.Text+ "';";
-                instruccion.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Se ha aceptado la solicitud correctamente!", "Solicitud Aceptada");
-                TextBox2.Text = "";
-                TextBox1.Text = "";
-                TextBox3.Text = "";
-                DropDownList1.Items.Clear();
-                conectarBase();
+                    connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
+                    connection.ConnectionString = connectionString;
+                    connection.Open();
+                    //update 
+                    MySqlCommand instruccion = connection.CreateCommand();
+                    instruccion.CommandText = "update solicitud set Estado_Solicitudl='aceptada' where Id_solicitud='" + TextBox1.Text + "';";
+                    instruccion.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Se ha aceptado la solicitud correctamente!", "Solicitud Aceptada");
+                    TextBox2.Text = "";
+                    TextBox1.Text = "";
+                    TextBox3.Text = "";
+                    DropDownList1.Items.Clear();
+                    conectarBase();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio algún problema, intente mas tarde!", "Error de solicitud");
+
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Ocurrio algún problema, intente mas tarde!", "Error de solicitud");
-
+                MessageBox.Show("No ha seleccionado ninguna solicitud, no se puede rechazar o aceptar nada!", "Solicitud vacía");
             }
+            
         }
         private void rechazar()
         {
-            try
+            if (TextBox1.Text!="" && TextBox2.Text!="" && TextBox3.Text!="")
             {
+                try
+                {
 
-                connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
-                connection.ConnectionString = connectionString;
-                connection.Open();
-                //update 
-                MySqlCommand instruccion = connection.CreateCommand();
-                instruccion.CommandText = "update solicitud set Estado_Solicitudl='rechazada' where Id_solicitud='" + TextBox1.Text + "';";
-                instruccion.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Se ha rechazado la solicitud correctamente!", "Solicitud Rechazada");
-                TextBox2.Text = "";
-                TextBox1.Text = "";
-                TextBox3.Text = "";
-                DropDownList1.Items.Clear();
-                conectarBase();
+                    connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
+                    connection.ConnectionString = connectionString;
+                    connection.Open();
+                    //update 
+                    MySqlCommand instruccion = connection.CreateCommand();
+                    instruccion.CommandText = "update solicitud set Estado_Solicitudl='rechazada' where Id_solicitud='" + TextBox1.Text + "';";
+                    instruccion.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Se ha rechazado la solicitud correctamente!", "Solicitud Rechazada");
+                    TextBox2.Text = "";
+                    TextBox1.Text = "";
+                    TextBox3.Text = "";
+                    DropDownList1.Items.Clear();
+                    conectarBase();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio algún problema, intente mas tarde!", "Error de solicitud");
+
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Ocurrio algún problema, intente mas tarde!", "Error de solicitud");
-
+                MessageBox.Show("No ha seleccionado ninguna solicitud, no se puede rechazar o aceptar nada!","Solicitud vacía");
             }
+            
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
             rechazar();
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

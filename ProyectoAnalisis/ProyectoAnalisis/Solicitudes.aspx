@@ -7,12 +7,12 @@
 &nbsp;&nbsp;
         <asp:Label ID="Label2" runat="server" Text="juanito"></asp:Label>
 &nbsp;
-        <asp:Label ID="Label3" runat="server" Text="123456789" Visible="False"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="12345678" Visible="False"></asp:Label>
     </p>
     <p>
         <asp:Label ID="Label7" runat="server" Text="Nuevas Solicitudes"></asp:Label>
     </p>
-    <asp:DropDownList ID="DropDownList1" runat="server" CausesValidation="True">
+    <asp:DropDownList ID="DropDownList1" runat="server" CausesValidation="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
     </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Consultar"/>
