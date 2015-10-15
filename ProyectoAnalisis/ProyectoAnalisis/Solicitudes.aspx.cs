@@ -35,6 +35,7 @@ namespace ProyectoAnalisis
                     TextBox1.Text = Reader["Id_solicitud"].ToString();
                     TextBox2.Text = Reader["Tipo"].ToString();
                     TextBox3.Text = Reader["Descripcion"].ToString();
+                    Label8.Text=Reader["DPI"].ToString();
                     //MessageBox.Show(aam);
 
                 }
@@ -136,9 +137,14 @@ namespace ProyectoAnalisis
                     connectionString = "server=127.0.0.1;uid=root;database=analisis1;port=3306;pwd=12345;";
                     connection.ConnectionString = connectionString;
                     connection.Open();
-                    //update 
+                    //Inserción nuevo caso
+                    MySqlCommand instruccionn = connection.CreateCommand();
+                    String fecha = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
+                    instruccionn.CommandText = "insert into caso(Id_Caso,Descripcion,Fecha_Ingreso,Usuario_Usuario,Estado_Id_Estado,Tipo_Caso_Id_Tipo) values(" + TextBox1.Text + ",'" + TextBox3.Text + "','" + fecha + "','" + Label8.Text + "'," + "'Iniciado','" + TextBox2.Text + "');";
+                    //Se actualiza el registro de las solicitudes
                     MySqlCommand instruccion = connection.CreateCommand();
                     instruccion.CommandText = "update solicitud set Estado_Solicitudl='aceptada' where Id_solicitud='" + TextBox1.Text + "';";
+                    instruccionn.ExecuteNonQuery();
                     instruccion.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Se ha aceptado la solicitud correctamente!", "Solicitud Aceptada");

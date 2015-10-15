@@ -39,5 +39,6 @@
     <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Rechazar" />
     <br />
     <br />
+    <asp:Label ID="Label8" runat="server" Text="Label" Visible="False"></asp:Label>
     <br />
 </asp:Content>
