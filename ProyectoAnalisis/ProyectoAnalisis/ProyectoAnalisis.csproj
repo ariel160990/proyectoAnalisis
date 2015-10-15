@@ -66,6 +66,7 @@
     <Content Include="AgregarCaso.aspx" />
     <Content Include="AsignarCaso.aspx" />
     <Content Include="ConsultaCaso.aspx" />
+    <Content Include="ControlarCasos.aspx" />
     <Content Include="ControlCaso.aspx" />
     <Content Include="EnviarSolicitud.aspx" />
     <Content Include="images\img01.jpg" />
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="ConsultaCaso.aspx.designer.cs">
       <DependentUpon>ConsultaCaso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlarCasos.aspx.cs">
+      <DependentUpon>ControlarCasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlarCasos.aspx.designer.cs">
+      <DependentUpon>ControlarCasos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlCaso.aspx.cs">
       <DependentUpon>ControlCaso.aspx</DependentUpon>
