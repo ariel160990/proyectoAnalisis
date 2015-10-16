@@ -47,9 +47,27 @@
     <br />
     <br />
     <br />
-    <asp:Label ID="Label17" runat="server" Text="Multimedia"></asp:Label>
+    <asp:Label ID="Label17" runat="server" Text="Multimedia (seleccione el archivo para abrirlo)"></asp:Label>
+    <br />
+    <br />
+    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+    </asp:DropDownList>
+    <br />
+    <br />
+    <asp:Label ID="Label18" runat="server" Text="Agregar Nuevas Imagenes"></asp:Label>
     <br />
     <br />
     <asp:FileUpload ID="FileUpload1" runat="server" />
+    <br />
+    <br />
+    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Agregar" />
+    <br />
+    <br />
+    <asp:ListBox ID="ListBox1" runat="server" Width="226px"></asp:ListBox>
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Guardar" />
+    <br />
+    <br />
     <br />
 </asp:Content>
