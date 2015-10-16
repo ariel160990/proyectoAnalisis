@@ -63,11 +63,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministrarCaso.aspx" />
     <Content Include="AgregarCaso.aspx" />
     <Content Include="AsignarCaso.aspx" />
     <Content Include="ConsultaCaso.aspx" />
     <Content Include="ControlarCasos.aspx" />
     <Content Include="ControlCaso.aspx" />
+    <Content Include="ControlClientes.aspx" />
     <Content Include="EnviarSolicitud.aspx" />
     <Content Include="images\img01.jpg" />
     <Content Include="images\img02.jpg" />
@@ -93,6 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrarCaso.aspx.cs">
+      <DependentUpon>AdministrarCaso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarCaso.aspx.designer.cs">
+      <DependentUpon>AdministrarCaso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarCaso.aspx.cs">
       <DependentUpon>AgregarCaso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +136,13 @@
     </Compile>
     <Compile Include="ControlCaso.aspx.designer.cs">
       <DependentUpon>ControlCaso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlClientes.aspx.cs">
+      <DependentUpon>ControlClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlClientes.aspx.designer.cs">
+      <DependentUpon>ControlClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="EnviarSolicitud.aspx.cs">
       <DependentUpon>EnviarSolicitud.aspx</DependentUpon>
