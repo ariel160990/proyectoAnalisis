@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `Analisis1`.`Caso` (
   `Usuario_Usuario` VARCHAR(100) NOT NULL COMMENT '',
   `Estado_Id_Estado` VARCHAR(50) NOT NULL COMMENT '',
   `Tipo_Caso_Id_Tipo` VARCHAR(50) NOT NULL COMMENT '',
+  `Abogado` VARCHAR(50) NOT NULL COMMENT '',
   PRIMARY KEY (`Id_Caso`)  COMMENT '')
 ENGINE = InnoDB;
 

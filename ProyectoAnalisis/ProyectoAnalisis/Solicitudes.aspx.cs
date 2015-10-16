@@ -140,7 +140,7 @@ namespace ProyectoAnalisis
                     //Inserción nuevo caso
                     MySqlCommand instruccionn = connection.CreateCommand();
                     String fecha = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
-                    instruccionn.CommandText = "insert into caso(Id_Caso,Descripcion,Fecha_Ingreso,Usuario_Usuario,Estado_Id_Estado,Tipo_Caso_Id_Tipo) values(" + TextBox1.Text + ",'" + TextBox3.Text + "','" + fecha + "','" + Label8.Text + "'," + "'Iniciado','" + TextBox2.Text + "');";
+                    instruccionn.CommandText = "insert into caso(Id_Caso,Descripcion,Fecha_Ingreso,Usuario_Usuario,Estado_Id_Estado,Tipo_Caso_Id_Tipo,Abogado) values(" + TextBox1.Text + ",'" + TextBox3.Text + "','" + fecha + "','" + Label8.Text + "'," + "'Iniciado','" + TextBox2.Text +"','"+Label3.Text+ "');";
                     //Se actualiza el registro de las solicitudes
                     MySqlCommand instruccion = connection.CreateCommand();
                     instruccion.CommandText = "update solicitud set Estado_Solicitudl='aceptada' where Id_solicitud='" + TextBox1.Text + "';";

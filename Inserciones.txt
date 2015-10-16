@@ -1,0 +1,2 @@
+INSERT INTO `analisis1`.`usuario` (`Usuario`, `contrasenia`, `Nombre`, `DPI`, `Direccion`, `Telefono`, `No_Colegiado`, `Activo`, `Rol`) VALUES ('juanito', '12345', 'Juan Gomez', '2234555550403', '3ra. Calle 2-34 Zona 3, Barrio el Gallito, Guatemala', '87945621', '12345678', '1', 'Abogado');
+INSERT INTO `analisis1`.`usuario` (`Usuario`, `contrasenia`, `Nombre`, `DPI`, `Direccion`, `Telefono`, `Activo`, `Rol`) VALUES ('powerpancho', '12345', 'Francisco Coloj', '2236666880401', 'Chimaltenango, Chimaltenango', '51247110', '1', 'Cliente');
